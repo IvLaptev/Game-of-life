@@ -10,36 +10,40 @@
 #include "codes.h"
 using namespace sf;
 
+/***********************
+ ласс, управл€ющий игрой
+***********************/
+
 class Game {
-	Texture texture;
-	Sprite form;
-	std::map<vector<int>, Cell> cells;
-	float ratio;
-	int height;
-	int width;
-	int topBorder;
-	int leftBorder;
-	int cellSize;
+	Texture texture;	// текстура окна
+	Sprite form;		// спрайт окна
+	std::map<vector<int>, Cell> cells;	// клеткак и еЄ координаты
+	float ratio;		// коэффициент масштабировани€
+	int height;		// высота пол€ в клетках
+	int width;		// ширина пол€ в клетках
+	int topBorder;		// верхний отступ пол€
+	int leftBorder;		// нажний отступ пол€
+	int cellSize;		// размер €чейки
 public:
-	Game();
+	Game();	// конструктор, считающий ratio
 
-	bool inRect(int x, int y, int key);
+	bool inRect(int x, int y, int key);	// провер€ет на нажатие на элемент интерфейса
 
-	Vector2i findCoordinates(int x, int y);
+	Vector2i findCoordinates(int x, int y);	// переводит координаты окна в координаты пол€
 
-	void addCell(Vector2i);
+	void addCell(Vector2i);	// добавл€ет €чейку в список
 
-	void startWindow();
+	void startWindow();	// создаЄт стартовое окно
 
-	void mainWindow();
+	void mainWindow();	// создаЄт главное окно
 
-	void errorWindow();
+	void errorWindow();	// создаЄт окно ошибки ввода
 
-	void createField(Texture &);
+	void createField(Texture &);	// создаЄт игровое поле и заносит его в текстуру
 
-	void drawCells(RenderWindow &);
+	void drawCells(RenderWindow &);	// рисует клетки
 
-	void newGeneration();
+	void newGeneration();	// считает новое поколение
 
 	~Game();
 };

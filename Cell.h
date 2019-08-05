@@ -6,28 +6,32 @@
 #include "codes.h"
 using namespace sf;
 
+/*****************************
+ ласс обозначающий €чейку пол€
+*****************************/
+
 class Cell {
-	Color color;
-	Vector2i coords;
-	int neighbours;
-	bool alive;
+	Color color;		// цвет €чейки
+	Vector2i coords;	// координаты €чейки на поле
+	int neighbours;		// кол-во соседей
+	bool alive;		// признак того, что клетка жива
 public:
 
-	Cell();
+	Cell();		// базовый конструктор
 
-	bool isAlive();
+	bool isAlive();	// узнаЄт, жива ли клетка
 
-	void changeValue();
+	void changeValue();	// мен€ет alive на противоположенное
 
-	void addNeighbour();
+	void addNeighbour();	// добавл€ет одного сосед к соотв. переменной
 
-	int getNeighbour();
+	int getNeighbour();	// возвращает кол-во соседей
 
-	void setCoordinates(Vector2i &);
+	void setCoordinates(Vector2i &);	// устанавливает координаты клетки на поле
 
-	void setColor(Color color);
+	void setColor(Color color);	// устанавливает цвет клетки
 
-	Color getColor();
+	Color getColor();	// возвращает цвет клетки
 
 	Cell operator= (const Cell& c);
 

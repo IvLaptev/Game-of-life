@@ -6,31 +6,35 @@
 using namespace sf;
 using namespace std;
 
+/***********************************
+ ласс, представл€ющий текстовое поле
+***********************************/
+
 class TextBox {
-	vector<int> text;
-	Sprite font[11];
-	Vector2f boxPos;
+	vector<int> text;	// введЄнное значение
+	Sprite font[11];	// шрифт и курсор
+	Vector2f boxPos;	// местоположение
 	float time;
-	bool active;
-	bool visibleCursor;
+	bool active;		// заполн€етс€ ли сейчас
+	bool visibleCursor;	// видимый курсор
 public:
-	TextBox(Texture&, bool);
+	TextBox(Texture&, bool);	// инициализаци€ переменных
 
-	void setPosition(Vector2f);
+	void setPosition(Vector2f);	// установка координат на поле
 
-	bool setText(int);
+	bool setText(int);	// ввод символа в поле
 
-	int getNumber();
+	int getNumber();	// вывод значени€ пол€ в виде числа
 
-	void draw(RenderWindow&, float);
+	void draw(RenderWindow&, float);	// вывод пол€ на экран
 
-	void disable();
+	void disable();		// сделать не активным
 
-	void activate();
+	void activate();	// сделать активным
 
-	bool isActive();
+	bool isActive();	// проверить активность
 
-	void clear();
+	void clear();		// очистить текстовое значение
 	
 	~TextBox();
 };

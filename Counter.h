@@ -6,22 +6,26 @@
 #include "codes.h"
 using namespace sf;
 
+/**********************************
+ ласс, представл€ющий собой счЄтчик
+**********************************/
+
 class Counter
 {
-	Texture texture;
-	Sprite font[9];
-	int count;
-	double ratio;
+	Texture texture;	// текстура шрифта
+	Sprite font[9];		// спрайты шрифта
+	int count;		// значение счЄтчика
+	double ratio;		// коэффициент масштабировани€
 public:
-	Counter(double ratio);
+	Counter(double ratio);	// конструктор, инициализирующий стартовые значени€
 
-	void setPosition(Vector2f position);
+	void setPosition(Vector2f position);	// установка координат
 
-	void increase();
+	void increase();	// увеличение на единицу
 
-	void decrease();
+	void decrease();	// уменьшение на единицу
 
-	void draw(RenderWindow &);
+	void draw(RenderWindow &);	// изображение на экране
 
 	~Counter();
 };
